@@ -1,13 +1,17 @@
+'use strict';
+
 //Dependencies
 var express = require('express');
+var routes = require('./routes');
 var app = express();
-var routes = require('./routes.js')
-app.use(express.static('client'));
 
-Routes
-app.get('/', function (req, res) {
-  res.redirect("index.html");
-});
+
+//Set Static Server
+app.use(express.static('client'));
+//Register Configuration
+
+//Register Routes
+routes.register(app);
 
 //Start Server
 app.listen(3000, function () {

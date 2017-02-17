@@ -1,5 +1,15 @@
-//All routes
+/**
+ * Main application routes
+ */
 
-app.get('/', function (req, res) {
-  res.redirect("index.html");
-});
+'use strict';
+
+var routes = {
+
+    register: function(app){
+        app.use('/api/auth', require('./app/auth'));
+    }
+
+}
+
+module.exports = routes;
