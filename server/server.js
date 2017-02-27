@@ -3,17 +3,18 @@
 //Dependencies
 var express = require('express');
 var routes = require('./routes');
+var config = require('./config');
+var middleware = require("./middleware");
 var app = express();
 
-
-//Set Static Server
-app.use(express.static('client'));
-//Register Configuration
-
+//Config
+config.registerAll(app);
+//Middleware
+middleware.registerAll(app);
 //Register Routes
-routes.register(app);
+routes.registerAll(app);
 
 //Start Server
-app.listen(3000, function () {
-  console.log('Evanios Test Server is Running!')
+app.listen(process.env.PORT||8080, function () {
+  console.log('Nodejs Server is Running!')
 })

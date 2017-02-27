@@ -6,8 +6,8 @@
 
 var routes = {
 
-    register: function(app){
-        app.use('/api/auth', require('./app/auth'));
+    registerAll: function(app){
+        app.use('/api/things', require('./app/things'));
     }
 
 }

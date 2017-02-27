@@ -5,7 +5,7 @@
 
 'use strict';
 
-var model = require("./auth.model");
+var model = require("./things.model");
 var controller = {
 
     index: function(req,res){
