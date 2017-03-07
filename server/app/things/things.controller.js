@@ -9,14 +9,34 @@ var model = require("./things.model");
 var controller = {
 
     index: function(req,res){
-        res.json({
-            "Testing": "ok"
+
+        //Async Function
+        model.methods.getAll({},function(err,results){
+            if(err){
+                res.json({
+                    "Error": "Found"
+                }).status(200);
+            }else{
+                res.json({
+                    "index": results
+                }).status(200);
+            }
         });
     },
 
     create: function(req,res){
-        res.json({
-            "Testing": "Fine"
+
+        //Async Function
+        model.methods.insert({},function(err,results){
+            if(err){
+                res.json({
+                    "Error": "Found"
+                }).status(500);
+            }else{
+                res.json({
+                    "index": results
+                }).status(201);
+            }
         });
     }
 

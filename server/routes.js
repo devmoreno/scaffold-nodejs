@@ -14,7 +14,7 @@ var routes = {
         });
 
         //Rest Api
-        app.use('/api/things', require('./app/things'));
+        app.use('/api/things', require('./app/things')); //example rest api
     }
 
 }
